@@ -1,7 +1,7 @@
 import openai
 
 # OpenAI API key setup
-openai.api_key = 'your_openai_api_key_here'
+openai.api_key = 'key'
 
 # Define company-specific policies
 company_policies = {
