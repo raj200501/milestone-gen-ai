@@ -2,10 +2,11 @@
 from transformers import pipeline
 from vector_database import VectorDatabase
 
+
 class RAGPipeline:
     def __init__(self):
         self.db = VectorDatabase()
-        self.generator = pipeline('text-generation', model='gpt-3')
+        self.generator = pipeline('text-generation', model='gpt-4')
 
     def load_texts(self, texts):
         self.db.add_texts(texts)
@@ -14,6 +15,7 @@ class RAGPipeline:
         relevant_texts = self.db.search(query)
         context = " ".join([text for text, _ in relevant_texts])
         return self.generator(query + context, max_length=150)
+
 
 if __name__ == "__main__":
     rag = RAGPipeline()

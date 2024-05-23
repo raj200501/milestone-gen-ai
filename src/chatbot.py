@@ -1,6 +1,7 @@
 # src/chatbot.py
 from rag_pipeline import RAGPipeline
 
+
 class Chatbot:
     def __init__(self):
         self.rag_pipeline = RAGPipeline()
@@ -10,6 +11,7 @@ class Chatbot:
 
     def get_response(self, query):
         return self.rag_pipeline.answer_query(query)
+
 
 if __name__ == "__main__":
     bot = Chatbot()

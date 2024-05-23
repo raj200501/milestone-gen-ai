@@ -1,4 +1,5 @@
 langchain
+langchain-community
 transformers
 faiss-cpu
 pymupdf
