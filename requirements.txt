@@ -1,0 +1,9 @@
+langchain
+transformers
+faiss-cpu
+pymupdf
+pandas
+numpy
+flask
+requests
+python-dotenv
