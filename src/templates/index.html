@@ -1,0 +1,71 @@
+<!-- src/templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milestone Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .chat-container {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            width: 300px;
+        }
+        .chat-container h1 {
+            margin-top: 0;
+        }
+        .chat-container form {
+            display: flex;
+            flex-direction: column;
+        }
+        .chat-container input[type="text"] {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .chat-container input[type="submit"] {
+            padding: 10px;
+            background-color: #007bff;
+            border: none;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .chat-container .response {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <h1>Milestone Chatbot</h1>
+        <form method="POST" action="/chat">
+            <input type="text" name="query" placeholder="Ask a question..." required>
+            <input type="submit" value="Send">
+        </form>
+        {% if query %}
+            <div class="response">
+                <strong>You:</strong> {{ query }}<br>
+                <strong>Chatbot:</strong> {{ response }}
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
