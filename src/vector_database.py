@@ -2,6 +2,7 @@
 import faiss
 from langchain.embeddings import SentenceTransformerEmbeddings
 
+
 class VectorDatabase:
     def __init__(self, model_name='all-MiniLM-L6-v2'):
         self.model = SentenceTransformerEmbeddings(model_name)
@@ -19,6 +20,7 @@ class VectorDatabase:
         query_embedding = self.model.encode([query])
         D, I = self.index.search(query_embedding, top_k)
         return [(self.texts[i], D[0][i]) for i in I[0]]
+
 
 if __name__ == "__main__":
     db = VectorDatabase()
