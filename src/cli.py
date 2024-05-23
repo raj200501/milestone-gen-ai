@@ -1,6 +1,7 @@
 # src/cli.py
 from chatbot import Chatbot
 
+
 def main():
     bot = Chatbot()
     print("Welcome to the Milestone Chatbot!")
@@ -12,6 +13,7 @@ def main():
             break
         response = bot.get_response(query)
         print(f"Chatbot: {response[0][0]}")
+
 
 if __name__ == "__main__":
     main()
