@@ -12,12 +12,14 @@ with open("../data/milestone_policies.txt", 'r') as file:
     texts = file.readlines()
 rag.load_texts(texts)
 
+
 @app.route('/teams', methods=['POST'])
 def teams():
     data = request.json
     query = data['text']
     response = rag.answer_query(query)
     return jsonify({"text": response})
+
 
 if __name__ == "__main__":
     app.run(port=5000)
